@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'pixellari';
+    src: url('../PIXELLARI.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'ipixel';
+    src: url('../I-PIXEL-U.TTF') format('truetype');
+}
+
+:root{
+    --theme:rgb(236, 218, 191);
+    --text-color : black;
+    --text-color2 : #663931;
+    --btn-color : #8f563b;
+    --bg-img : url('../intro-bg4.jpg');
+}
+.darkMode{
+    --theme: rgb(28, 30, 44);
+    --text-color : rgb(255, 255, 255);
+    --text-color2 : #8f563b;
+    --bg-img : url('../intro-bg5.jpg');
+}
+
+html{
+    font-family: 'pixellari';
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.5),rgba(0,0,0,1)),
+        var(--bg-img);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin:0px;
+    padding:0px;
+    overflow: hidden;
+}
+
+.grid-3d{
+    display: grid;
+    grid-template-areas: "overlay";
+}
+
+.container{
+    grid-area: overlay;
+    height: 97.5dvh;
+    margin:5px;
+    display: grid;
+    grid-template-columns: 15fr 85fr;
+    grid-template-rows: 30fr 70fr;
+    grid-area: 
+        "notes notes-title"
+        "recent-notes main";
+    gap: 5px;
+}
+
+.section{
+    border: solid var(--text-color2) ;
+    border-radius: 10px;
+    background-color: rgba(236, 218, 191,0.6);
+    backdrop-filter: blur(3px);
+}
+
+.notes{
+    align-items: center;
+    justify-content: center;
+}
+
+.notes img{
+    image-rendering: pixelated;
+    width: 70%;
+    height: auto;
+    margin-left:30px;
+    margin-top:10px;
+    transition:cubic-bezier(0.175, 0.885, 0.32, 2.275) transform 0.3s  ;
+    
+}
+.notes:hover img{
+    transform: scale(1.2) ;
+}
+
+.notes-title{
+    display: grid;
+    grid-template-areas: "overlay";
+    background-color: var(--btn-color);
+    color: var(--theme);
+    border:solid var(--text-color2) 5px;
+}
+.title{
+    grid-area: overlay;
+    font-size: 120px;
+    padding-top: 30px;
+    text-align: center;
+}
+.home-btn{
+    grid-area: overlay;
+    width: 8%;
+    height: 20%;
+    margin:10px 10px 10px 91%;
+    border:dashed var(--text-color2);
+    background-color: var(--theme);
+    font-family: 'pixellari';
+    border-radius: 5px;
+    font-size: 20px;
+    transition:cubic-bezier(0.175, 0.885, 0.32, 2.775) transform 0.3s;
+}
+.home-btn:hover{
+    transform: scale(1.1);
+}
+
+.recent-notes{
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows: 10fr 90fr;
+    
+}
+
+.recent-notes-title{
+    border-bottom:solid var(--text-color2);
+    padding-top: 10px;
+    margin: 5px;
+    font-size: 20px;
+}
+.recent-notes-content{
+    border:none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.recent-notes-content::-webkit-scrollbar {
+    width: 8px;
+}
+.recent-notes-content::-webkit-scrollbar-thumb {
+    background: darkblue;
+    border-radius: 4px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows: 50fr 50fr;
+    gap: 5px;
+}
+
+.folders{
+    width: initial;
+    margin: 10px;
+    font-size: 25px;
+    color: var(--text-color2);
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows: 20fr 80fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom:solid var(--text-color2);
+}
+
+.files{
+    width: initial;
+    margin: 10px;
+    font-size: 25px;
+    color: var(--text-color2);
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows: 20fr 80fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.note-edit{
+    width: 50%;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+    grid-area: overlay;
+    background-color: var(--theme);
+    background-attachment: fixed;
+    background-position: center;
+    background-size:contain;
+    z-index: 2;
+    border: none;
+    border-radius: 20px;
+    transform: translateY(120%);
+    transition:cubic-bezier(0.175, 0.885, 0.32, 1.275) transform 0.3s;
+}
+
+.note-edit-active{
+    transform: translateY(0%);
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    grid-area: overlay;
+    backdrop-filter: blur(3px);
+}
+
+.hidden{
+    visibility: collapse;
+    opacity:1;
+    transition: opacity 1s;
+}
+
+.visible{
+    visibility: visible;
+    opacity:1;
+    transition: opacity 1s;
+}

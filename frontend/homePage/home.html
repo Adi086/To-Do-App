@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="grid-3d">    
+        <div class="grid-container">
+            <nav class="nav-bar">
+                <div class="nav-head"><img src="pixelPlan_radio.png">
+                    Pixel plan</div>
+
+                <div class="nav-btn-section">
+                    <button class="nav-btn">Home</button>
+                    <button class="nav-btn" onclick="setting()">Settings</button>
+                    <button class="nav-btn" onclick="aboutUs()">About us</button>
+                </div>
+            </nav>
+
+            <div class="main" id="main">
+                <div class="intro" id="intro">
+                    <h1 id="intro-title">Pixel plan</h1>
+                    <p>A task manager with sylized inteface.</p></div>
+                <div class="functionalities" id="functionalities">
+                    <div class="to-do-list function" id="to-do">
+                        <img src="todolistSymbol.png">
+                        <div>To-do list</div>
+                    </div>
+                    <div class="notes function" id="notes" onclick="notes()">
+                        <img src="../notes.png">
+                        <div>Notes</div>
+                    </div>
+                    <div class="calender function" id="calender">
+                        <img src="calender.png">
+                        <div>Calender</div>
+                    </div>
+                    <div class="next function" id="next"><p style=" text-align: center;">Work in progress...</p></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-hidden" id="sidebar">
+            <div class="logo"></div>
+            <div class="setting-text">Settings</div>
+            <div class="option-list">
+                <button class="option" id="theme-change" onclick="toggleTheme()">Change theme</button>
+                <button class="option" id="back" onclick="setting()">Back</button>
+            </div>
+        </div>
+
+        <div class="overlay hidden" id="overlay" onclick="setting()" ></div>
+        <div class="overlay hidden" id="overlay2" onclick="aboutUs()" ></div>
+
+        <div class="about-us" id="about-us">
+            <div class="about-us-title">About us</div>
+            <div class="about-us-content">
+                demo content
+            </div>
+        </div>
+    </div>
+</body>
+</html>
