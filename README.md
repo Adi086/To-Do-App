@@ -2,7 +2,7 @@
 A basic to-do list app with minecraft theme.
 
 ## Version 1.0
--contains only a simple todo list page.
+-contains only a simple todo list page. 
 -contains a home page.
 -contains a notes page.
 -contains a calender page wih markers.
